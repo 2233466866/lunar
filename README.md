@@ -1,4 +1,5 @@
-# Quick start(快速入门)
+# PHP公历转农历扩展
+## Quick start(快速入门)
 1. Install(安装)
    ```
    git clone https://github.com/2233466866/lunar.git
@@ -15,4 +16,3 @@
    # CODE
    echo date_to_lunar(2000,1,1);
    ```
-
