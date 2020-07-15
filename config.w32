@@ -1,0 +1,7 @@
+ARG_ENABLE('lunar', 'lunar support', 'no');
+
+if (PHP_LUNAR != 'no') {
+	AC_DEFINE('HAVE_LUNAR', 1, 'lunar support enabled');
+
+	EXTENSION('lunar', 'lunar.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
