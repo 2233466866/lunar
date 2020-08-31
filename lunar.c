@@ -173,7 +173,29 @@ PHP_FUNCTION(date_to_lunar)
     lunar_month = i;
     lunar_day = offset + 1;
     char lunar_output[100] = {0};
-    sprintf(lunar_output, "%s-%s-%s%s-%s", lunar_tiangan_names[year_cyl%10], lunar_dizhi_names[year_cyl%12], is_leap == 1 ? "闰" : "", lunar_month_names[lunar_month], lunar_day_names[lunar_day]);
+    sprintf(
+        lunar_output,
+
+        "%i-%i-%i-%s%s-%s-%s%s-%s%s-%s%s",
+
+        lunar_year,
+        lunar_month,
+        lunar_day,
+
+        is_leap == 1 ? "闰" : "",
+        lunar_month_names[lunar_month],
+
+        lunar_day_names[lunar_day],
+
+        lunar_tiangan_names[year_cyl%10],
+        lunar_dizhi_names[year_cyl%12],
+
+        lunar_tiangan_names[mon_cyl%10],
+        lunar_dizhi_names[mon_cyl%12],
+
+        lunar_tiangan_names[day_cyl%10],
+        lunar_dizhi_names[day_cyl%12]
+    );
     char* ret = lunar_output; 
     RETVAL_STRINGL(lunar_output, strlen(ret));
 /******************************↑******************************/
