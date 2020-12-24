@@ -7,6 +7,11 @@
    ./configure
    make
    make install
+   
+   vim php.ini
+   extension=lunar.so
+   ESC
+   :wq
    ```
 
 1. Usage(使用)
